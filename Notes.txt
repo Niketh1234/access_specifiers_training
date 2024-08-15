@@ -1,0 +1,56 @@
+Package : Packages is a group of type of classes, interfaces or sub-packages
+
+
+How to create packages using command prompt : 
+
+-> Suppose you are in a folder containing some java source files
+-> To create a packages all the source file must contain "package package_name" in the code;
+-> In the command prompt type : "javac -d . *.java"
+-> In the above command "." indicates that the package must be created in the current folder itself
+-> If you want the package to be at a specific location instead of "." you can give the path to that location
+-> In the above command "*.java" indicates that by default all the source files are included into the package.
+-> If you only want some particular java source to be in the package you can mention the source files with space separated between them. For example : "javac -d /path Program1.java Program2.java Program3.java"
+-> You can see that a new folder with the package name that you have given will be created and the associated .class files will be present in them. 
+-> To compile a particular file in the package you can use the command "javac -d . Program1.java"
+-> To compile all the files in the package you can use "javac -d . *.java"
+-> After successful compilation you can use the following command to execute a particular file in the package. command : package_name.FileName.java
+-> Remember that the file which you want to execute must contain main method in it.
+
+Importing and using the package created in another file : 
+
+-> Suppose you have another file name Program.java where you need to use the class "Hello" in the my_package.
+-> You can write the statement "import my_package.Hello" for importing the class 
+-> Now in the Program source file you can create instance of the class and use it, For Example : 
+    h = new Hello(); // using the "h" instance you can access the member function in the Hello class
+    h.functionExecution(); // consider you have that function in Hello class, it will be called
+
+
+Access Specifier : Access Specifier are keywords in java which used to restrict the access of things such as classes, methods, data members, interfaces, constructors, variables
+
+Use of Access Specifiers : To implement Security and Encapsulation, restriction on scope and visibility
+In java there four access specifiers 
+1. Private : It is the most restricted access Specifier. Consider a class which contains some data members and member functions which are declared as private. So those data members and member functions are only available in that particular class only. They are not accessible outside the class.
+* If you want to use private access specifier for a class then that class should be inside another class only. It is only for class-level encapsulation
+
+2. Protected : 
+protected for methods : If protected is used for methods they are only accessible throughout the package and subclasses of another package only.
+Similarly it is applicable for the classes, data members and so on..
+
+3. Public : public access specifier give the access to all the packages and you can access it wherever you want
+
+4. Default : If there is no access specifier mentioned then the method/data member/class is considered to be a default thing. 
+default for methods : The default methods are only accessible within the package only.
+Similarly default data members, class as well. 
+* It is used to implement package-level encapsulation
+
+
+
+
+
+Scope/Access Specifier   : 
+                                Public      Protected       Default     Private
+Within the class             :  Yes         Yes             Yes         Yes 
+sub class in same package    :  Yes         Yes             Yes         No 
+Within the package           :  Yes         Yes             Yes         No 
+Another package              :  Yes         No              No          No 
+sub class in another package :  Yes         Yes             No          No
