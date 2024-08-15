@@ -1,10 +1,11 @@
 package mathematics;
 
 public class Calculator{
-    public int add(int a,int b){
+     protected int value = 100;
+     protected int add(int a,int b){
         return a+b;
     }
-    public int multiply(int a,int b){
+    protected int multiply(int a,int b){
         return a*b;
     } 
     public static void main(String args[]){
@@ -13,3 +14,4 @@ public class Calculator{
         System.out.println(c.multiply(3,4));
     }
 }
+
